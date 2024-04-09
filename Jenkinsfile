@@ -1,9 +1,6 @@
 pipeline {
     agent any
-	parameters {
-        string(name: 'number', defaultValue: '5', description: 'Enter a number')
-    }
-
+	
 	
     stages {
         stage('Checkout') {
