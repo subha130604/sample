@@ -9,7 +9,7 @@ pipeline {
         }
          stage('Build') {
             steps {
-                dir('D:\maven\my-app') {
+                dir('D:/maven/my-app') {
                     bat 'mvn clean install'
                 }
             }
