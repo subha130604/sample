@@ -11,7 +11,7 @@ package com.mycompany.app;
 // Using Brute Forcew Approach
 
 // Importing required classes
-import java.util.Scanner;
+
 
 public class App {
 
