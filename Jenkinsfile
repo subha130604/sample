@@ -23,7 +23,7 @@ pipeline {
         stage('Run') { 
             steps {
 	    dir('D:/maven/my-app'){
-                bat "java -cp target/classes com.mycompany.app.App ${params.number}"
+                bat "java -cp target/classes com.mycompany.app.App 5"
             }
 	    }
         }
