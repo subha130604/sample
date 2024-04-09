@@ -1,35 +1,22 @@
 pipeline {
     agent any
-
+    
     stages {
-		stage('DELETE') { 
+        stage('Checkout') {
             steps {
-                echo '--CLONE STAGE EXECUTION ---'
-		    	
-		    bat "for /d %%X in (*.*) do rmdir /s /q %%X"
+                git 'https://github.com/subha130604/sample.git'
             }
         }
-		stage('CLONE') { 
+        stage('Build') {
             steps {
-                echo '--CLONE STAGE EXECUTION ---'
-				bat "git clone https://github.com/subha130604/sample.git"
+                sh 'mvn clean package'
             }
         }
-        stage('Build') { 
+        stage('Test') {
             steps {
-                bat 'mvn compile'
-            }
-		}	
-	stage('Run') { 
-            steps {
-                bat 'java -cp target/classes com.dev.mycompany.app.App'
+                sh 'mvn test'
             }
         }
-	stage('Test'){
-		steps{
-			bat 'javac -cp junit-4.13.2.jar;hamcrest-core-1.3.jar;. AppTest.java '
-			bat 'java -cp junit-4.13.2.jar;hamcrest-core-1.3.jar;. org.junit.runner.JUnitCore AppTest'
-		}
-	}
+        // Add more stages as needed
     }
 }
