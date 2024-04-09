@@ -21,8 +21,10 @@ pipeline {
         
         stage('Run') { 
             steps {
+	    dir('D:/maven/my-app'){
                 bat 'java -cp target/classes com.mycompany.app.App'
             }
+	    }
         }
         // Add more stages as needed
     }
