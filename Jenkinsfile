@@ -19,6 +19,11 @@ pipeline {
                 bat 'mvn clean test'
             }
         }
+        stage('Run') { 
+            steps {
+                bat 'java -cp target/classes com.mycompany.app.App'
+            }
+        }
         // Add more stages as needed
     }
 }
