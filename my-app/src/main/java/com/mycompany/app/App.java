@@ -21,10 +21,8 @@ public class App {
             return;
         }
 
-        Scanner reader = new Scanner(System.in);
-
-        System.out.print("Enter a number: ");
-        int num = reader.nextInt();
+        
+        int num = Integer.parseInt(args[0]);
 
         if(num % 2 == 0)
             System.out.println(num + " is even");
