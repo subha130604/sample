@@ -10,13 +10,13 @@ pipeline {
          stage('Build') {
             steps {
                 dir('D:/maven/my-app') {
-                    bat 'mvn clean install'
+                    bat 'mvn clean package'
                 }
             }
         }
         stage('Test') {
             steps {
-                bat 'mvn test'
+                bat 'mvn clean test'
             }
         }
         // Add more stages as needed
