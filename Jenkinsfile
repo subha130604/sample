@@ -9,6 +9,8 @@ pipeline {
         }
          stage('Build') {
             steps {
+                javac -d target/classes src/main/java/com/mycompany/app/*.java
+
                 dir('D:/maven/my-app') {
                     bat 'mvn clean package'
                 }
