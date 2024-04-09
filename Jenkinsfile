@@ -27,8 +27,8 @@ pipeline {
         }
 	stage('Test'){
 		steps{
-			bat 'javac -cp junit-4.13.2.jar;hamcrest-core-1.3.jar;. LinearSearchTest.java '
-			bat 'java -cp junit-4.13.2.jar;hamcrest-core-1.3.jar;. org.junit.runner.JUnitCore LinearSearchTest'
+			bat 'javac -cp junit-4.13.2.jar;hamcrest-core-1.3.jar;. AppTest.java '
+			bat 'java -cp junit-4.13.2.jar;hamcrest-core-1.3.jar;. org.junit.runner.JUnitCore AppTest'
 		}
 	}
     }
