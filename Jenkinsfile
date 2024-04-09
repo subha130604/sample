@@ -1,5 +1,8 @@
 pipeline {
     agent any
+	parameters {
+        string(name: 'number', defaultValue: '5', description: 'Enter a number')
+    }
     
     stages {
         stage('Checkout') {
@@ -22,7 +25,7 @@ pipeline {
         stage('Run') { 
             steps {
 	    dir('D:/maven/my-app'){
-                bat 'java -cp target/classes com.mycompany.app.App'
+                bat "java -cp target/classes com.mycompany.app.App ${params.number}"
             }
 	    }
         }
