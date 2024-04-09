@@ -19,7 +19,7 @@ pipeline {
         stage('Build') { 
             steps {
                 bat 'javac -cp target/classes src/main/java/com/mycompany/app/*.java'
-'
+
             }
 		}	
         
