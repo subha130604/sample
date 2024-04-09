@@ -7,9 +7,11 @@ pipeline {
                 git 'https://github.com/subha130604/sample.git'
             }
         }
-        stage('Build') {
+         stage('Build') {
             steps {
-                bat 'mvn clean package'
+                dir('D:\maven\my-app') {
+                    bat 'mvn clean install'
+                }
             }
         }
         stage('Test') {
