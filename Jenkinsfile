@@ -13,8 +13,9 @@ pipeline {
                 
 
                 dir('D:/maven/my-app') {
-                    bat 'mvn clean package'
-			bat 'javac -cp target/classes src/main/java/com/mycompany/app/*.java'
+			bat 'mvn compile'
+                    bat 'mvn package'
+			
                 }
             }
         }
