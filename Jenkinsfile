@@ -21,7 +21,9 @@ pipeline {
         }
 	    stage('Test'){
 		    steps{
+			    dir('D:/maven/my-app') {
 			    bat 'mvn test'
+		    }
 		    }
 	    }
        
